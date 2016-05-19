@@ -147,6 +147,18 @@ extends java.lang.Object</pre>
 <div class="block">Define the listener port for the link acceptor.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../sk/hax/application/DSLDataCenterLinkConfigurator.LinkAcceptorBuilder.html#secure()">secure</a></strong>()</code>
+<div class="block">Specify that the acceptor will use SSL connections.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../sk/hax/application/DSLDataCenterLinkConfigurator.LinkAcceptorBuilder.html#secure(boolean)">secure</a></strong>(boolean&nbsp;secure)</code>
+<div class="block">Specify whether the acceptor will use SSL connections.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -201,13 +213,40 @@ extends java.lang.Object</pre>
 <a name="connector(groovy.lang.Closure)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>connector</h4>
 <pre>public&nbsp;void&nbsp;connector(groovy.lang.Closure&lt;?&gt;&nbsp;cl)</pre>
 <div class="block">Define a connector for the link acceptor.
  Connectors are used to connect access points of data centers running in different JVM instances, potentially on different physical hosts.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>cl</code> - closure containing the connector configuration</dd></dl>
+</li>
+</ul>
+<a name="secure()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>secure</h4>
+<pre>public&nbsp;void&nbsp;secure()</pre>
+<div class="block">Specify that the acceptor will use SSL connections.
+ If SSL is to be used, a key store and trust store need to exist for the data center (files keystore.jks and truststore.jks).
+ The key store has to contain keys with aliases corresponding to the connector names, as well as a generic key for the data center with an alias of '/'.
+ The trust store has to contain all certificates of remote connectors with aliases corresponding to the local connector names, as well as all the generic certificates of remote data centers.</div>
+</li>
+</ul>
+<a name="secure(boolean)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>secure</h4>
+<pre>public&nbsp;void&nbsp;secure(boolean&nbsp;secure)</pre>
+<div class="block">Specify whether the acceptor will use SSL connections.
+ If SSL is to be used, a key store and trust store need to exist for the data center (files keystore.jks and truststore.jks).
+ The key store has to contain keys with aliases corresponding to the connector names, as well as a generic key for the data center with an alias of '/'.
+ The trust store has to contain all certificates of remote connectors with aliases corresponding to the local connector names, as well as all the generic certificates of remote data centers.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>secure</code> - if true, SSL will be used</dd></dl>
 </li>
 </ul>
 </li>
@@ -277,6 +316,6 @@ extends java.lang.Object</pre>
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>© 2015 by mio. All Rights Reserved.</small></p>
+<p class="legalCopy"><small>© 2016 by mio. All Rights Reserved.</small></p>
 </body>
 </html>
